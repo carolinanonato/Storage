@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Testing file upload</title>
+    <style>
+      *{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .file_upload {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      progress {
+        margin: 20px;
+      }
+      button {
+          margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <div class="file_upload">
+        <input type="file" value="Upload" accept=".jpg" id="fileUpload" />
+        <progress value="0" max="100" id="uploader">0%</progress>
+        File Name: <input type="text" id="imgName" />
+        <button type="submit" id="submitBtn">Add to Firebase</button>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script>
+        const firebaseConfig = {
+  apiKey: "AIzaSyBD8uLFonA4phh_ncn_aJbEHs3hAoayBtc",
+  authDomain: "wddm-120-75317.firebaseapp.com",
+  projectId: "wddm-120-75317",
+  storageBucket: "wddm-120-75317.appspot.com",
+  messagingSenderId: "1077978049037",
+  appId: "1:1077978049037:web:92a413b761216422b4c344"
+};
+
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
