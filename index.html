@@ -2,31 +2,60 @@
   <head>
     <title>Testing file upload</title>
     <style>
-      *{
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      .file_upload {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      progress {
-        margin: 20px;
-      }
-      button {
+        * {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        .file_upload {
+          display: flex;
+          flex-direction: row;
+        }
+        progress {
+          margin: 20px;
+        }
+        button {
           margin: 10px 0;
-      }
-    </style>
+        }
+        .img_wrapper {
+          width: 100px;
+          height: 100px;
+          position: relative;
+        }
+        .img_wrapper img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .gallery {
+          display: flex;
+          gap: 10px;
+          margin: 20px 10px;
+        }
+        .img_delete {
+          position: absolute;
+          right: 5px;
+          top: 5px;
+          color: white;
+          font-size: 10px;
+          background: #8080806e;
+          padding: 2px 4px;
+          border-radius: 20px;
+          cursor: pointer;
+        }
+      </style>
   </head>
   <body>
     <div class="app">
       <div class="file_upload">
-        <input type="file" value="Upload" accept=".jpg" id="fileUpload" />
-        <progress value="0" max="100" id="uploader">0%</progress>
-        File Name: <input type="text" id="imgName" />
-        <button type="submit" id="submitBtn">Add to Firebase</button>
+        <div>
+          <input type="file" value="Upload" accept=".jpg" id="fileUpload" />
+          <progress value="0" max="100" id="uploader">0%</progress>
+        </div>
+        <div>
+          File Name: <input type="text" id="imgName" />
+          <button type="submit" id="submitBtn">Add to Firebase</button>
+        </div>
       </div>
+      <div class="gallery" id="gallery"></div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
